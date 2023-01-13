@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply font-size for text-body */
+@layer components {
+  .text-body-sm {
+    @apply text-h6;
+  }
+
+  .text-body-md {
+    @apply text-h5;
+  }
+
+  .text-body-lg {
+    @apply text-h4;
+  }
+}
+
+/* Remove spin button on input[type='number] */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Scrollbar vertical */
+  overflow-y: overlay;
+
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.tip-overlay::before {
+  content: '';
+  background-color: var(--bg);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.tag-overlay::before {
+  content: '';
+  background-color: var(--bg);
+  opacity: var(--opacity);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.progress-wrapper {
+  background: conic-gradient(var(--border-color) var(--degree), #f2f1f3 0deg);
+}
+
+.overflow-y-overlay {
+  overflow-y: overlay;
+  z-index: 0;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.separate-with-comma > * + *::before {
+  content: ', ';
+}
+
+.side-slide-modal {
+  transition: left linear 0.5s, opacity linear 0.5s;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
