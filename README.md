@@ -90,6 +90,5 @@
 |         Name          |         Email          |
 | :-------------------: | :--------------------: |
 | `Hoàng Đình Anh Tuấn` | 20522110@gm.uit.edu.vn |
-|   `Hoàng Văn Phúc`    | 20521760@gm.uit.edu.vn |
 |    `Phan Thanh Tú`    | 20522101@gm.uit.edu.vn |
 |  `Nguyễn Thái Tuấn`   | tuannt150102@gmail.com |
