@@ -12,6 +12,7 @@ import ShareFlashcardModal from './ShareFlashcardModal';
 import EmptyState from 'assets/images/empty-state.jpg';
 import { FaRegSadCry } from 'react-icons/fa';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 const initialUpdate = {
   isUpdate: false,
@@ -33,6 +34,7 @@ const FlashcardSetDetail = ({ pure = false, flashcardSetId: outerFlashcardSetId 
     setDetail,
   } = useFetchFlashcardSetDetail(outerFlashcardSetId || flashcardSetId);
   const { flashcards, fetchData } = useFetchFlashcardsInSet(outerFlashcardSetId || flashcardSetId, page, search);
+  const { accessToken } = useSelector((store) => store.auth);
 
   const toggleShareModal = () => {
     setShowShare((prev) => !prev);
@@ -83,7 +85,7 @@ const FlashcardSetDetail = ({ pure = false, flashcardSetId: outerFlashcardSetId 
     <Outer>
       <div className="flex justify-center">
         <div className={classNames('w-full min-h-[600px]', !pure && 'max-w-[820px] my-8')}>
-          {detail.name ? (
+          {accessToken && detail.name ? (
             <>
               {!pure && (
                 <>
