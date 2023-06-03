@@ -46,7 +46,7 @@ function useFormatData(config) {
         name: dataItem.part,
         data: dataItem.setQuestionList.map((item) => ({
           ...item.setQuestion[0],
-          img: item.side[0].content,
+          img: item.side[0]?.content,
           audio: item?.audio,
         })),
       };
