@@ -31,7 +31,11 @@ const LessonVideo = ({ lesson, callback }) => {
       <div className="px-6 md:px-8 lg:px-16 xl:px-[100px] bg-black">
         <YouTube
           ref={ref}
-          videoId={getYouTubeID(lesson.videoUrl)}
+          videoId={getYouTubeID(
+            String(lesson.videoUrl)?.includes('dummyimage')
+              ? 'https://www.youtube.com/watch?v=26PrgjTboVQ'
+              : lesson.videoUrl,
+          )}
           height
           opts={{
             width: '100%',
