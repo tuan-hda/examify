@@ -38,7 +38,7 @@ function useFormatData(examTakingData = {}) {
         name: dataItem.part,
         data: dataItem.setQuestionList.map((item) => ({
           ...item.setQuestion[0],
-          img: getImgFromInnerHtml(item.side[1].content),
+          img: getImgFromInnerHtml(item.side[1]?.content),
           audio: item?.audio,
         })),
       };
