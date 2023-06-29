@@ -89,8 +89,8 @@ function ModalRegisterCourse({ course }) {
           {course.charges ? (
             <>
               <p className="font-semibold text-lg xl:text-body-lg text-ac_red">{printPrice(course.price)}đ</p>
-              <p className="text-body-sm text-ac_green font-medium">giảm 73%</p>
-              <p className="text-body-sm line-through text-t_gray">660.000đ</p>
+              {/* {course.discount && <p className="text-body-sm text-ac_green font-medium">{course.discount}</p>} */}
+              {/* <p className="text-body-sm line-through text-t_gray">660.000đ</p> */}
             </>
           ) : (
             <p className="font-semibold text-body-lg text-ac_blue">{course.pointToUnlock} điểm</p>
