@@ -83,7 +83,7 @@ const ExamItem = ({ exam, list }) => {
           </div>
 
           {list && (
-            <Link to={`${exam.id}`} className="ml-auto">
+            <Link to={'/exams/1'} className="ml-auto">
               <Button height="40px" width="100%" type="outline" unbold={true}>
                 Chi tiết
               </Button>
@@ -93,7 +93,7 @@ const ExamItem = ({ exam, list }) => {
       </div>
 
       {!list && (
-        <Link to={`${exam.id}`} className="mt-5 block">
+        <Link to={'/exams/1'} className="mt-5 block">
           <Button height="40px" width="100%" type="outline" unbold={true}>
             Chi tiết
           </Button>
